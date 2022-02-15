@@ -77,6 +77,37 @@ setState(prevState => {
 });
 ```
 
+## useParams
+
+```tsx
+(alias) function useParams<ParamsOrKey extends string | Record<string, string> = string>(): Readonly<[
+  ParamsOrKey
+] extends [string] ? Params<ParamsOrKey> : Partial<ParamsOrKey>>
+import useParams
+```
+
+Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the route path.
+
+## useNavigate
+
+```jsx
+function Redirect() {
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate('/home')
+  }
+  return (
+    <div>
+      <button onClick={handleClick}>go home</button>
+    </div>
+  );
+}
+```
+
+(alias) useNavigate(): NavigateFunction
+import useNavigate
+Returns an imperative method for changing the location. Used by s, but may also be used by other elements to change the location.
+
 ### References
 
 1. [React.js][https://reactjs.org/docs/hooks-reference.html#usestate]
