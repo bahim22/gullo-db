@@ -104,9 +104,27 @@ function Redirect() {
 }
 ```
 
-(alias) useNavigate(): NavigateFunction
-import useNavigate
-Returns an imperative method for changing the location. Used by s, but may also be used by other elements to change the location.
+(alias: navigate) useNavigate(): NavigateFunction
+
+- Returns an imperative method for changing the location.
+- Used by s, but may also be used by other el to change the location.
+
+(async func) onSubmit(e: any): Promise< void>
+
+Event.preventDefault(): void
+If invoked when the cancelable attribute value is true, and while executing a listener for the event with passive set to false, signals to the operation that caused event to be dispatched that it needs to be canceled.
+
+```js
+<input
+	type='text'
+	className='form-control'
+	id='position'
+	value={form.position}
+	onChange={(e) => updateForm({ position: e.target.value })}/>
+```
+
+(property) React.ChangeEvent<HTMLInputElement>.target: EventTarget & HTMLInputElement
+- value Returns the value of the data at the cursor's current position.
 
 ### References
 
