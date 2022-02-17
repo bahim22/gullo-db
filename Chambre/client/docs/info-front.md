@@ -1,5 +1,5 @@
 
-# React Hooks info
+# Front-end CRUD with React Hooks and Router
 
 ## _useState_
 
@@ -108,6 +108,8 @@ function Redirect() {
 
 - Returns an imperative method for changing the location.
 - Used by s, but may also be used by other el to change the location.
+
+## onSubmit and ChangeEvent
 
 (async func) onSubmit(e: any): Promise< void>
 

@@ -23,14 +23,13 @@ const Record = (props) => (
 	</tr>
 );
 
-const RecordList = () => {
+export default function RecordList() {
 	const [records, setRecords] = useState([]);
-	const localhost = `http://localhost:7222/record/`
 
 	//method that fetches records from db
 	useEffect(() => {
 		async function getRecords() {
-			const response = await fetch({localhost});
+			const response = await fetch(`http://localhost:7222/record/`);
 
 			if (!response.ok) {
 				const message = `Error has occurred: ${response.statusText}`;
@@ -45,9 +44,47 @@ const RecordList = () => {
 		getRecords();
 
 		return;
-	}, [records.legth]);
+	}, [records.length]);
 
 	// method for deleting a record
+	async function deleteRecord(id) {
+		await fetch (`http://localhost:7222/${id}`, {
+			method: 'DELETE'
+		});
 
-	
+		const newRecords = records.filter((el) => el._id !== id);
+		setRecords(newRecords);
+	}
+
+	// method to map out records on table
+	const recordList = () => {
+		return records.map((record) => {
+			return (
+				<Record
+					record={record}
+					deleteRecord={() => deleteRecord(record._id)}
+					key={record._id}
+				/>
+			);
+		});
+	}
+
+	// section for displaying table w/ records of individuals
+
+	return (
+		<div>
+			<h3>Record List</h3>
+			<table className='table table-striped' style={{ marginTop: 20 }}>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Level</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>{recordList()}</tbody>
+			</table>
+		</div>
+	);
 }

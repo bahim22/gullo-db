@@ -1,7 +1,7 @@
 
 # JavaScript info
 
-## `event listener`
+## Event Listener
 
 ```ts
 (method) addEventListener<K extends keyof WindowEventMap>(type: K, listener: (this: Window, ev: WindowEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void (+1 overload)
@@ -21,7 +21,7 @@ If an AbortSignal is passed for options's signal, then the `event listener` will
 
 The `event listener` is appended to target's `event listener` list and is not appended if it has the same type, callback, and capture.
 
-## arr manipulation
+## Array manipulation
 
 _length_
 (property) Array<any>.length: number
@@ -86,31 +86,44 @@ Returns the elements of an array that meet the condition specified in a callback
 
 @param predicate — A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
 
+filter(predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): any[]
+A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
+
+Returns the elements of an array that meet the condition specified in a callback function.
+
 @param thisArg — An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
+
+## ex. use concat to change localhost value
+
+```js
+const changeLocalHost = () => {
+ const localhost = `http://localhost:7222/`
+
+ const adjustLocal= () => {
+	return (localhost.concat(`record/`))
+	};
+}
+```
 
 ## tsx func & arrow snippet
 
 ```ts
+//arrow
 type Props = {}
 
 const  = (props: Props) => {
   return (
     <div></div>
   )
-}
+};
+export default;
 
-export default
-
-import React from 'react'
-
+// function
 type Props = {}
 
-function ({}: Props) {
+export default function ({}: Props) {
   return (
     <div></div>
   )
-}
-
-export default
+};
 ```
-

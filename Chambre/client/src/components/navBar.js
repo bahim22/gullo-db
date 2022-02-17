@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import React from 'react'
 
-const NavBar = () => {
+const Navbar = () => {
 	return (
 		<div>
 			<nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -41,4 +41,4 @@ const NavBar = () => {
 	)
 }
 
-export default NavBar;
+export default Navbar;

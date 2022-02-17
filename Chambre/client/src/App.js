@@ -1,19 +1,32 @@
-// import './App.css';
+import React from 'react'
 
-// function App() {
-//   return (
-//     <div className="App">
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/navBar'
+import RecordList from './components/recordList'
+import Edit from './components/edit'
+import Create from './components/create'
 
-//     </div>
-//   );
-// }
+const App = () => {
+  return (
+    <div>
+			<Navbar  />
+			<Routes>
+				<Route  exact path='/' element={<RecordList  />} />
+				<Route path='/edit/:id' element={<Edit  />}  />
+				<Route path='/create' element={<Create  />}  />
+			</Routes>
+    </div>
+  );
+}
 
-// export default App;
+export default App;
 
+/*
+import './App.css';
 import logo from './LogoDedGeo.jpg';
 import './App.css';
 
-function App() {
+function AppOld() {
   return (
     <div className="App">
       <header className="App-header">
@@ -33,5 +46,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+*/
