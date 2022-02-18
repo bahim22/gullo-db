@@ -192,3 +192,16 @@ yarn remove <pack> --flag
 - start the server then the FE
 - test and debug
 - add UI/UX, az login and build
+
+## connect to db
+
+```js
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://<username><password>@clustertsx.1uwhs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+```
