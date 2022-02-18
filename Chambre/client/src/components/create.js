@@ -39,7 +39,7 @@ const Create = () => {
 			return;
 		});
 
-		setForm({ name: '', position: '', level: '' });
+		setForm({ name: "", position: "", level: "" });
 		navigate('/')
 	}
 

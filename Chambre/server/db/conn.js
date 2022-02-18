@@ -13,7 +13,7 @@ module.exports = {
       // Verify we got a good 'db' object
       if (db)
       {
-        _db = db.db("MERN stack DataBase")
+        _db = db.db("todo")
         console.log("MongoDB connection est bien")
       }
       return callback(err);
