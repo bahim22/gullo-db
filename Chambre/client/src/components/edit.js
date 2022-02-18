@@ -58,9 +58,9 @@ const Edit = () => {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-		})
+		});
 
-		navigate('/')
+		navigate('/');
 	}
 
 	//display form that will update the data w/ user input

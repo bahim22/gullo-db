@@ -57,7 +57,7 @@ export default function RecordList() {
 	}
 
 	// method to map out records on table
-	const recordList = () => {
+	function recordList() {
 		return records.map((record) => {
 			return (
 				<Record

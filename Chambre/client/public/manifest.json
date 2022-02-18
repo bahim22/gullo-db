@@ -1,8 +1,8 @@
 {
-    "name": "Dionysus Era Dev Next PWA",
+    "name": "Dionysus Era Dev MongoDb React App",
     "lang": "en-us",
-    "short_name": "DedNextPwa",
-    "description": "A PWA blog and portfolio for web developer Ibrahima Balde, Dionysus Era",
+    "short_name": "gullo-db",
+    "description": "A Fullstack App built following tutorial and using MongoDb and React to record employee info",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",

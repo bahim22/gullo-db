@@ -3,23 +3,23 @@ import { NavLink } from 'react-router-dom';
 
 import React from 'react'
 
-const Navbar = () => {
+export default function Navbar() {
 	return (
 		<div>
 			<nav className='navbar navbar-expand-lg navbar-light bg-light'>
 				<NavLink className='navbar-brand' to='/'>
-				<img
-					style={{'width' : 50 + '%'}}
-					src='./logoDed.jpg'
-					alt='navbar'
-				>
-				</img>
+					<img
+						style={{ 'width': 50 + '%' }}
+						src='./logoDed.jpg'
+						alt='navbar'
+					>
+					</img>
 				</NavLink>
 				<button
 					className='navbar-toggle'
 					type='button'
 					data-toggle='collapse'
-					data-formTarget='#navbarSupportedContent'
+					data-target='#navbarSupportedContent'
 					aria-controls='navbarSupportedContent'
 					aria-expanded='false'
 					aria-label='Toggle Nav'
@@ -31,14 +31,12 @@ const Navbar = () => {
 					<ul className='navbar-nav ml-auto'>
 						<li className='nav-item'>
 							<NavLink className='nav-link' to='/create'>
-								Record Creation
+								Create New Record
 							</NavLink>
 						</li>
 					</ul>
 				</div>
 			</nav>
 		</div>
-	)
+	);
 }
-
-export default Navbar;

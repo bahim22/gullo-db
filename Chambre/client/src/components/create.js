@@ -7,8 +7,6 @@ const Create = () => {
 		name: '',
 		position: '',
 		level: '',
-		//team: '' || null,
-		//rings: '' || null
 	});
 	const navigate = useNavigate()
 
@@ -28,7 +26,7 @@ const Create = () => {
 		const newPerson = { ...form };
 
 		await fetch('http://localhost:7222/record/add', {
-			method: 'Post',
+			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
@@ -44,12 +42,10 @@ const Create = () => {
 	}
 
 
-
 	return (
 		<div>
-			<h3> New Record Creation</h3>
+			<h3> Create New Record </h3>
 			<form onSubmit={onSubmit}>
-
 				<div className='form-group'>
 					<label htmlFor='name'>Name</label>
 					<input
@@ -77,7 +73,7 @@ const Create = () => {
 						<input
 							type='radio'
 							className='form-check-input'
-							id='positionInterns'
+							id='positionIntern'
 							name='positionOptions'
 							value='Intern'
 							checked={form.level === 'Intern'}
