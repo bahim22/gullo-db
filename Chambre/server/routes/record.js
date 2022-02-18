@@ -2,7 +2,7 @@ const express = require('express')
 
 const recordRoutes = express.Router()
 
-const db0 = require('../db/conn')
+const dbo = require('../db/conn')
 
 //convert id string to ObjId for _id
 const ObjectId = require('mongodb').ObjectId

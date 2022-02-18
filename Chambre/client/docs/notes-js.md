@@ -24,19 +24,19 @@ The `event listener` is appended to target's `event listener` list and is not ap
 ## Array manipulation
 
 _length_
-(property) Array<any>.length: number
+(property) Array<>.length: number
 
 Gets or sets the length of the array. This is a number one higher than the highest index in the array.
 
 _push_
-(method) Array<any>.push(...items: any[]): number
+(method) Array<>.push(...items: any[]): number
 
 Appends new elements to the end of an array, and returns the new length of the array.
 
 @param items — New elements to add to the array.
 
 _map_
-(method) Array<any>.map<U>(callbackfn: (value: any, index: number, array: any[]) => U, thisArg?: any): U[]
+(method) Array<>.map<U>(callbackfn: (value: any, index: number, array: any[]) => U, thisArg?: any): U[]
 
 Calls a defined callback function on each element of an array, and returns an array that contains the results.
 
@@ -45,7 +45,7 @@ Calls a defined callback function on each element of an array, and returns an ar
 @param thisArg — An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
 
 _forEach_
-(method) Array<any>.forEach(callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any): void
+(method) Array<>.forEach(callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any): void
 
 Performs the specified action for each element in an array.
 
@@ -53,13 +53,13 @@ Performs the specified action for each element in an array.
 
 @param thisArg — An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
 
-_toLocalString_ and _toString_
-(method) Array<any>.toLocaleString(): string
+_toLocalString_ | _toString_
+(method) Array<>.toLocaleString(): string
 
 toLocalString ? The elements are converted to string using their toLocaleString methods : Returns a string representation of an array.
 
 _indexOf_
-(method) Array<any>.indexOf(searchElement: any, fromIndex?: number): number
+(method) Array<>.indexOf(searchElement: any, fromIndex?: number): number
 
 Returns the index of the first occurrence of a value in an array, or -1 if it is not present.
 
@@ -68,32 +68,35 @@ Returns the index of the first occurrence of a value in an array, or -1 if it is
 @param fromIndex — The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0.
 
 _pop_
-(method) Array<any>.pop(): any
+(method) Array<>.pop(): any
 
 Removes the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
 
 _join_
-(method) Array<any>.join(separator?: string): string
+(method) Array<>.join(separator?: string): string
 
 Adds all the elements of an array into a string, separated by the specified separator string.
 
 @param separator — A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma.
 
 _filter_
-(method) Array<any>.filter<S>(predicate: (value: any, index: number, array: any[]) => value is S, thisArg?: any): S[] (+1 overload)
+
+```ts
+(method) Array<>.filter<S>(predicate: (value: any, index: number, array: any[]) => value is S, thisArg?: any): S[] (+1 overload)
+filter(predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): any[]
+```
 
 Returns the elements of an array that meet the condition specified in a callback function.
 
 @param predicate — A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
 
-filter(predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): any[]
 A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
 
 Returns the elements of an array that meet the condition specified in a callback function.
 
 @param thisArg — An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
 
-## ex. use concat to change localhost value
+## Ex. use of concat
 
 ```js
 const changeLocalHost = () => {
@@ -108,22 +111,16 @@ const changeLocalHost = () => {
 ## tsx func & arrow snippet
 
 ```ts
-//arrow
 type Props = {}
 
 const  = (props: Props) => {
-  return (
-    <div></div>
-  )
+  return (<div></div>)
 };
 export default;
 
-// function
 type Props = {}
 
 export default function ({}: Props) {
-  return (
-    <div></div>
-  )
+  return (<div></div>)
 };
 ```

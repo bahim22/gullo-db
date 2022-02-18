@@ -1,5 +1,67 @@
 
-# Notes for StoryBook React App
+# react-fullstack MongoDb App
+
+tags: [ 'react', 'express', 'mongoDb', 'npm', 'javascript']
+
+## Notes
+
+## Project setup, config and packages
+
+1. create root dir and project dir
+2. start the nodejs app via yarn init
+3. install ts and dep (local or -g )
+   1. express, mongoDB (mongoose), cors and their types as devDep for TS compiler
+   2. install dep so we can compile the ts and for starting server concurrently
+4. add build and start values to script key in package.json
+
+```bash
+yarn add typescript
+yarn add express cors mongoose
+yarn add -D @types/node @types/express @types/mongoose @types/cors
+yarn add -D concurrently nodemon
+```
+
+## Back-end steps
+
+- create a `type` (interface)
+- create a `model`
+  - import the BE `interface` and `util` from mongoose
+    - (defines the _A1_.`schema` and passes the interface as a _A2_.`type` to _A3_.`model`)
+- create `API` _controller_ (CRUD-get, add, update, delete info)
+  - create a func to _fetch data_(in controller/app/index.ts)
+  - the model gets data from db and returns res (array of items)
+  - create `api routes`
+  - create `server` and get keys from MongoDB Atlas by making a cluster
+
+## Front-end steps (adjust for proj not using tsx)
+
+- make the client side app with React
+  - create types
+  - fetch data
+  - create components
+  - add forms
+  - display items
+  - fetch/display data
+
+## Add Styling and Build for Production
+
+- Test
+- Debug
+- Deploy
+
+## editor config file add'l key/val
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+  },
+}
+```
+
+## Notes for Ts Fullstack
 
 ➾➔➤❖$ℬ⊕✓✂︎♑️©❖❝❞[]✬★☒☑︎⇐⥣⇓❮❯🖥💻⏳💡⚒🔑📭📦📨📊📈📜📚📕📙📘✂️🔐🔎♑️❌⭕️🚫✅❎🌐🆗2️⃣0️⃣▶️©️✔️™️☑️🔘🕢é
 
@@ -69,7 +131,7 @@ yarn versions #check --v of node, yarn, v8 etc.
 yarn remove <pack> --flag
 ```
 
-## 🔎 What's inside?
+## 🔎 Dir
 
    > .
     | Main App
@@ -100,21 +162,22 @@ yarn remove <pack> --flag
 `npm run build`: Builds the app for production to the `build` folder.\
 `npm run eject`: copy config files and the transitive dependencies (webpack, Babel, ESLint, etc) into your proj
 
-## FETypeScript
+## FE TypeScript
 
+- initially learned by creating todo app; can generalize for add'l fullstack apps
 - _src/type.d.ts_ holds the types
   - ext .d.ts allows types to be global, removing need for importing them
-- create the `todo type`
+- create the `types` for data you'll be using CRUD methods for
   - the FE `interface` needs to match the structure of the API data + add'l props for equaling the defined API types
-  - the `TodoProps` are = type of the app handling data rendering
+  - the `Props` are = type of the app handling data rendering
 - _axios response_ implemented to req info from API
-  - `getTodos`() func calls the server to get the data and returns a promise
+  - `get`() func calls the server to get the data and returns a promise
     - Type = AxiosResponse which is the Todos that will match type = ApiDataType
-  - `addtodo`: a user inputs data (argument) then the func responds with a promise (return)
+  - `add`: a user inputs data (argument) then the func responds with a promise (return)
   - Mdb also able to auto create _id prop so we can remove it.
-  - `updateTodo`
+  - `update`
     - pass in the updated data and the _id of the object & change status
-  - `deleteTodo`
+  - `delete`
     - receives _id param to return promise
 - `components`: todo form and display
   - AddTodo = React func compo that recieves the saveTodo() method as a prop, enabling storing data to the db
@@ -125,7 +188,7 @@ yarn remove <pack> --flag
   - implement useState with the ITodo type but initialized w/ empty []
   - since getTodos() returns a promise, able to use then func and return the user input data or error (change to _async func and await_); then call fetchTodos after compo mounts
 - (update/delete = get params, send req to server, get a res and carryout the task or throw error) upon form submit, addTodo() req to server and the data is either saved and the Todo updated or throw new error
-- place  AddTodo compo in App then use todos.map to loop through the data and return to the nested TodoItem compo
+- place AddTodo compo in App then use todos.map to loop thru the data & return to the nested TodoItem compo
 - start the server then the FE
 - test and debug
 - add UI/UX, az login and build

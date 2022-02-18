@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-//viewing compo for Records via Get method to fetch all data from db.
+//viewing compo for Records that uses fetch's get method to retrieve all data from db.
 
 const Record = (props) => (
 	<tr>

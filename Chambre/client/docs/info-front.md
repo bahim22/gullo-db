@@ -30,6 +30,10 @@
 
 ## async function
 
+- connected FE to BE using fetch.
+- fetch handles http requests
+- used in create.js, edit.js, and recordList.js as they handle http requests.
+
 - const onSubmit(e: any): Promise< void>
   - e.preventDefault(): the (e) event is the onSubmit func parameters
 
@@ -113,8 +117,8 @@ function Redirect() {
 
 (async func) onSubmit(e: any): Promise< void>
 
-Event.preventDefault(): void
-If invoked when the cancelable attribute value is true, and while executing a listener for the event with passive set to false, signals to the operation that caused event to be dispatched that it needs to be canceled.
+- Event.preventDefault(): void
+  - 'If invoked when the cancelable attribute value is true, and while executing a listener for the event with passive set to false, signals to the operation that caused event to be dispatched that it needs to be canceled.'
 
 ```js
 <input
@@ -122,12 +126,12 @@ type='text'
 className='form-control'
 id='position'
 value={form.position}
-onChange={(e) => updateForm({ position: e.target.value })}/>
-```
+onChange={(e) => updateForm({ position: e.target.value })}
+/>;
 
+// - ret the val of the data at the cursor's current position.
 (property) React.ChangeEvent<HTMLInputElement>.target: EventTarget & HTMLInputElement
-
-- value Returns the value of the data at the cursor's current position.
+```
 
 ## React Router
 
