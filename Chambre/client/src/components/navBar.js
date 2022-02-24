@@ -6,7 +6,7 @@ import React from 'react'
 export default function Navbar() {
 	return (
 		<div>
-			<nav className='navbar navbar-expand-lg navbar-light bg-light'>
+			<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
 				<NavLink className='navbar-brand' to='/'>
 					<img
 						style={{ 'width': 50 + '%' }}
