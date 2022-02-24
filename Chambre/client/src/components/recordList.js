@@ -75,7 +75,7 @@ export default function RecordList() {
 	return (
 		<div>
 			<h3>Record List</h3>
-			<table className='table table-striped' style={{ marginTop: 2 }}>
+			<table className='table table-striped' style={{ marginTop: 20 }}>
 				<thead>
 					<tr>
 						<th>Name</th>

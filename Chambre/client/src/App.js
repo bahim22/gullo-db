@@ -4,11 +4,13 @@ import Navbar from './components/navBar'
 import RecordList from './components/recordList'
 import Edit from './components/edit'
 import Create from './components/create'
-//import './App.css'
+import './App.css'
+
+import 'bootstrap/dist/css/bootstrap.css'
 
 const App = () => {
   return (
-    <div>
+    <div className='App'>
 			<Navbar />
 			<div style={{ margin: 20 }}>
 			<Routes>
