@@ -13,7 +13,7 @@ module.exports = {
       // Verify we got a good 'db' object
       if (db)
       {
-        _db = db.db("todo")
+        _db = db.db("react-todo")
         console.log("MongoDB connection est bien")
       }
       return callback(err);

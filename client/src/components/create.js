@@ -3,11 +3,7 @@ import { useNavigate } from 'react-router';
 import React, { useState } from 'react';
 
 const Create = () => {
-	const [form, setForm] = useState({
-		name: '',
-		position: '',
-		level: '',
-	});
+	const [form, setForm] = useState([]);
 	const navigate = useNavigate()
 
 	//methods for updating state prop
