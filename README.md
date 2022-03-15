@@ -1,5 +1,5 @@
 
-# gullo-db: react-fullstack MongoDb App
+# Gullo-db: MERN-fullstack MongoDb, React App
 
 tags: [ 'react', 'express', 'mongoDb', 'npm', 'javascript']
 
