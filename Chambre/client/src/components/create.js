@@ -13,7 +13,7 @@ const Create = () => {
 	//methods for updating state prop
 		//func takes any val & ret the prev param props in order to ret new changed val
 
-	const updateForm = (value) => {
+	function updateForm(value) {
 		return setForm((prev) => {
 			return { ...prev, ...value }
 		});
